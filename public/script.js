@@ -7,7 +7,7 @@ spinner.style.display = 'none';
 document
   .querySelector('#get-video-info-btn')
   .addEventListener('click', async () => {
-    const host = `http://localhost:3000/`;
+    const host = `https://downloady.herokuapp.com/`;
     let videoURL = document.querySelector('#videoUrl').value.trim();
     if (videoURL.length == 0) {
       alert('Masukkan link video youtube');
@@ -58,7 +58,7 @@ document
   });
 
 document.querySelector('#download-btn').addEventListener('click', () => {
-  const host = `http://localhost:3000/`;
+  const host = `https://downloady.herokuapp.com/`;
 
   let videoURL = document.querySelector('#video-url').value.trim();
   let itag = document.querySelector('#download-options').value;
