@@ -3,7 +3,7 @@ let title = '';
 let formatVideo = '';
 const spinner = document.querySelector('.loader');
 spinner.style.display = 'none';
-const host = `https://downloady.herokuapp.com/`;
+const host = `https://downloadsaja.herokuapp.com/`;
 
 document
   .querySelector('#get-video-info-btn')
