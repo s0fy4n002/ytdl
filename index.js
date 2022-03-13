@@ -10,6 +10,10 @@ app.listen(port, () => {
   console.log(`server up`);
 });
 
+app.use((req, res, next) => {
+  res.setHeader('Access-Control-Allow-Origin', '*');
+});
+
 app.get('/', (req, res) => {
   res.sendFile(`${__dirname}/public/index.html`);
 });
