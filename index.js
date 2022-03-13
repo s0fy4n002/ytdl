@@ -20,7 +20,7 @@ app.get('/videoInfo', async (req, res) => {
     const info = await ytdl.getInfo(videoUrl);
     res.send(info);
   } catch (error) {
-    res.status(404).json(error);
+    res.send(error);
   }
 });
 

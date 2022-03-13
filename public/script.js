@@ -3,14 +3,14 @@ let title = '';
 let formatVideo = '';
 const spinner = document.querySelector('.loader');
 spinner.style.display = 'none';
+const host = `https://downloady.herokuapp.com/`;
 
 document
   .querySelector('#get-video-info-btn')
   .addEventListener('click', async () => {
-    const host = `https://downloady.herokuapp.com/`;
     let videoURL = document.querySelector('#videoUrl').value.trim();
     if (videoURL.length == 0) {
-      alert('Masukkan link video youtube');
+      alert('Masukkan link');
       return;
     }
 
@@ -58,8 +58,6 @@ document
   });
 
 document.querySelector('#download-btn').addEventListener('click', () => {
-  const host = `https://downloady.herokuapp.com/`;
-
   let videoURL = document.querySelector('#video-url').value.trim();
   let itag = document.querySelector('#download-options').value;
 
