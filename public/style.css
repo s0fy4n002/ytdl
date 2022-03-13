@@ -1,0 +1,97 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+.content-wrapper {
+  height: 100vh;
+  width: 100wh;
+}
+.header {
+  height: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: chartreuse;
+}
+.form {
+  height: 90%;
+
+  background: chocolate;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 0;
+}
+.form .form-element {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+}
+
+.form .form-element input {
+  padding: 5px 10px;
+  width: 100%;
+  margin-bottom: 10px;
+}
+.form .form-element label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.form .form-element button {
+  background: chartreuse;
+  color: rgb(255, 255, 255);
+  /* font-weight: bold; */
+  cursor: pointer;
+  border: none;
+  outline: none;
+  padding: 10px 20px;
+}
+.form .form-element button:hover {
+  background: rgb(87, 167, 8);
+}
+
+.video-data {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  display: none;
+  height: 50vh;
+  transition: 0.3s all;
+}
+.video-data .data,
+.video-data .controls {
+  width: 50%;
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+.video-data .data .thumbnail img {
+  width: 100%;
+}
+
+.video-data .info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.video-data .info h2 {
+  font-size: 16px;
+}
+
+.video-data .info p {
+  font-size: 12px;
+}
+
+.video-data .controls {
+  display: flex;
+  justify-content: center;
+  height: 400px;
+  width: 100%;
+}
+.video-data .controls select {
+  margin-right: 10px;
+}
