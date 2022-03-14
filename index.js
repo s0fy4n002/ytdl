@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const ytdl = require('ytdl-core');
+const cors = require('cors')
 
 app.use(express.json());
 app.use(express.static('public'));
@@ -10,22 +11,28 @@ app.listen(port, () => {
   console.log(`server up`);
 });
 
-app.use((req, res, next) => {
-  res.setHeader('Access-Control-Allow-Origin', '*');
-  next();
-});
+app.use(cors({
+   origin: "*",
+  methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+  preflightContinue: false,
+  optionsSuccessStatus: 204
+}))
 
 app.get('/', (req, res) => {
   res.sendFile(`${__dirname}/public/index.html`);
 });
 
+app.get('/test', (req,res)=>{
+  res.send("test")
+})
+
 app.get('/videoInfo', async (req, res) => {
   try {
     const videoUrl = req.query.videoURL;
     const info = await ytdl.getInfo(videoUrl);
-    res.send(info);
+    return res.send(info);
   } catch (error) {
-    res.send(error);
+    res.status(404).json(error);
   }
 });
 
