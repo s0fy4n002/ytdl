@@ -10,6 +10,7 @@ document
   .addEventListener('click', async () => {
     let videoURL = document.querySelector('#videoUrl').value.trim();
     const configAxios = {
+        method: 'GET',
         url: `${host}videoInfo?videoURL=${videoURL}`,
         headers: { 'Access-Control-Allow-Origin': '*' },
       }
